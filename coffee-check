@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+/*jslint sloppy: true */
+/*global require: false, console: false, node: false, process: false */
+
+var coffee = require('coffee-script'),
+    fs = require('fs');
+
+try {
+    coffee.compile(fs.readFileSync('/dev/stdin').toString());
+} catch (e) {
+    console.log(e.toString().replace(/Error: Parse error on line (\d+): /, '$1:'));
+}
+
+/* vim: set ft=javascript : */
