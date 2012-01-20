@@ -11,7 +11,7 @@ let s:install_dir = expand('<sfile>:p:h')
 let s:plugin_path = s:install_dir . "/coffee-check/"
 let s:cmd = "cd " . s:plugin_path . " && ./coffee-check"
 
-au InsertLeave <buffer> call s:CoffeeCheck()
+" au InsertLeave <buffer> call s:CoffeeCheck()
 au BufWritePost <buffer> call s:CoffeeCheck()
 
 function! s:CoffeeCheckClear()
@@ -74,13 +74,13 @@ function! s:CoffeeCheck()
     let s:coffeecheck_qf = s:GetQuickFixStackCount()
   endif
 
-  if b:has_errors == 1
-    cwindow
-  else " Or not
+  if b:has_errors == 0
     echo "CoffeeCheck: All good."
   endif
-
   let b:cleared = 0
+
+  cwindow
+
 endfunction
 
 if !exists("*s:GetQuickFixStackCount")
