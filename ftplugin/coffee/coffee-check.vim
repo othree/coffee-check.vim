@@ -47,7 +47,6 @@ function! s:CoffeeCheck()
 
   let b:coffee_output = system(s:cmd, lines)
 
-  echom b:coffee_output
   for error in split(b:coffee_output, "\n")
     let b:parts = matchlist(error, '\v(\d+):(.*)')
     if !empty(b:parts)
@@ -73,7 +72,7 @@ function! s:CoffeeCheck()
     call setqflist(b:qf_list, '')
     let s:coffeecheck_qf = s:GetQuickFixStackCount()
   endif
-  let b:cleared = 1
+  let b:cleared = 0
 endfunction
 
 if !exists("*s:GetQuickFixStackCount")

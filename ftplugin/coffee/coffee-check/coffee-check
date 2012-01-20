@@ -8,15 +8,11 @@ var coffee = require('coffee-script'),
 try {
     coffee.compile(fs.readFileSync('/dev/stdin').toString());
 } catch (e) {
-    var str = e.toString();
-    if (/^Error/.test(str)) {
-        console.log(str.replace(/Error: Parse error on line (\d+): /, '$1:'));
-    } else if (/^SyntaxError/.test(str)) {
-        // var line = str.replace(/.+on line (\d+).+/, '$1');
-        str = str.replace(/SyntaxError: /, '');
-        
-        console.log(str.replace(/()(\d+): /, '$1:'));
-    }
+    var str = e.toString(),
+        match = str.match(/on line (\d+)/i),
+        line = match ? match[1] : 0;
+
+    console.log(line + ':' + str);
 }
 
 /* vim: set ft=javascript : */
