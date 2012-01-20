@@ -1,4 +1,4 @@
-" Base on jslint.vim by Jesse Hallett
+"Base on jslint.vim by Jesse Hallett
 " https://github.com/hallettj/jslint.vim
 
 echo "init cc"
@@ -10,7 +10,7 @@ else
 endif
 
 let s:install_dir = expand('<sfile>:p:h')
-let s:plugin_path = s:install_dir . "/../../bin/"
+let s:plugin_path = s:install_dir . "/coffee-check/"
 let s:cmd = "cd " . s:plugin_path . " && ./coffee-check"
 
 au InsertLeave <buffer> call s:CoffeeCheck()
