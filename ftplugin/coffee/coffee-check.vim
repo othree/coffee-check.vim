@@ -44,13 +44,14 @@ function! s:CoffeeCheck()
 
   let b:qf_list = []
   let b:qf_window_count = -1
+  let b:has_errors = 0
 
   let b:coffee_output = system(s:cmd, lines)
 
   for error in split(b:coffee_output, "\n")
     let b:parts = matchlist(error, '\v(\d+):(.*)')
     if !empty(b:parts)
-
+      let b:has_errors = 1
       let s:mID = matchadd('CoffeeScriptCompileError', '\v%' . b:parts[1] . 'l\S.*(\S|$)')
 
       let l:qf_item = {}
@@ -72,6 +73,13 @@ function! s:CoffeeCheck()
     call setqflist(b:qf_list, '')
     let s:coffeecheck_qf = s:GetQuickFixStackCount()
   endif
+
+  if b:has_errors == 1
+    cwindow
+  else " Or not
+    echo "CoffeeCheck: All good."
+  endif
+
   let b:cleared = 0
 endfunction
 
