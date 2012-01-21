@@ -1,3 +1,0 @@
-[submodule "ftplugin/coffee/coffee-check/coffee-script"]
-	path = ftplugin/coffee/coffee-check/coffee-script
-	url = git://github.com/jashkenas/coffee-script.git
