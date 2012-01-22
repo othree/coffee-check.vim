@@ -10,7 +10,12 @@ It is hard to find out where is you script error if you use [CoffeeScript](http:
 
 ## Installation
 
-* Use [pathogen.vim](http://www.vim.org/scripts/script.php?script_id=2332) or [Vundle](https://github.com/gmarik/vundle) is suggestion.
+Use [pathogen.vim](http://www.vim.org/scripts/script.php?script_id=2332) or [Vundle](https://github.com/gmarik/vundle) is suggestion.
+
+If you didn't install [vim-coffee-script](http://www.vim.org/scripts/script.php?script_id=3590)
+Add the following line to vimrc:
+
+    au BufRead,BufNewFile *.coffee set ft=coffee
 
 ## Important (Known Issues)
 
