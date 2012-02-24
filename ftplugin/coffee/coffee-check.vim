@@ -75,7 +75,7 @@ function! s:CoffeeCheck()
   endif
 
   if b:has_errors == 0
-    echo "CoffeeCheck: All good."
+    " echo "CoffeeCheck: All good."
   endif
   let b:cleared = 0
 
