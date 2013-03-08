@@ -17,6 +17,16 @@ Add the following line to vimrc:
 
     au BufRead,BufNewFile *.coffee set ft=coffee
 
+## Usage
+
+To disable error line sign, add this line to your ~/.vimrc file:
+
+    let g:coffeeCheckSignErrorLine = 0
+
+To enable error highlighting altogether add this line to your ~/.vimrc file:
+
+    let g:coffeeCheckHighlightErrorLine = 1
+
 ## Important (Known Issues)
 
 * Only one error appears in every check, if you have several error in your script, you will have to fix one by one.
