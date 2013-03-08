@@ -31,7 +31,7 @@ To enable error highlighting altogether add this line to your ~/.vimrc file:
 
 * Only one error appears in every check, if you have several error in your script, you will have to fix one by one.
 * Some error message can't locate to correct line number, all this kind of error will mark to line 1.
-* Cause of previous issue, can't use the behavior of jslint.vim. So Vim will open quickfix window if any error was found, side effect of open a quikfix window is the focus will be moved to quick fix window.
+* Cause of previous issue, can't use the behavior of jslint.vim. So Vim will open quickfix window if any error was found.
 
 ## Acknowledge
 
